@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Acceuil"
 layout: blank
 ---
 <main>
@@ -7,7 +7,7 @@ layout: blank
   <article>
     <header>
       <h1><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h1>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      
     </header>
 {{ page.excerpt }}
     {% unless page.excerpt == page.content %}
@@ -18,8 +18,8 @@ layout: blank
 </main>
 {% if paginator.total_pages > 1 %}
 <footer>
-    <a {% if paginator.previous_page %} class="gray" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" {% else %} class="disabled" {% endif %}>« newer posts</a>
-    <span class="paginate">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    <a {% if paginator.next_page %} class="gray" href="{{ paginator.next_page_path | prepend: site.baseurl }}" {% else %} class="disabled" {% endif %}>older posts »</a>
+    <a {% if paginator.previous_page %} class="gray" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" {% else %} class="disabled" {% endif %}>« nouveaux posts</a>
+    <span class="paginate">page {{ paginator.page }} sur {{ paginator.total_pages }}</span>
+    <a {% if paginator.next_page %} class="gray" href="{{ paginator.next_page_path | prepend: site.baseurl }}" {% else %} class="disabled" {% endif %}>anciens posts »</a>
 </footer>
 {% endif %}
